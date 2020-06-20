@@ -32,7 +32,8 @@ function print_count_down() {
   for count in `seq $1 -1 1` ; do
       tput rc
       tput el
-      echo -n ${count}
+      echo -en "${green}${count}${none}"
       sleep 1
   done
+  tput el1
 }
