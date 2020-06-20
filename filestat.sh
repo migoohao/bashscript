@@ -2,7 +2,7 @@
 
 . ./utils.sh
 
-if [[ $# -ne 0 ]]; then
+if [[ $# -ne 1 ]]; then
     echo Usage is $0 basepath
     exit
 fi
@@ -17,3 +17,7 @@ while read line; do
 done < `find ${path} -type f -print`
 
 _cyan ============ File types and counts =============
+for ftype in ${!statarray[@]} ; do
+    _magenta "${ftype}:${statarray[${ftype}]}"
+done
+
