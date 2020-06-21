@@ -15,7 +15,7 @@ while read line; do
     ftype=`file -b ${line} | cut -d, -f 1`
     let statarray["${ftype}"]++
 done < <(find ${path} -type f -print)
-echo read complete
+
 _cyan ============ File types and counts =============
 for ftype in "${!statarray[@]}" ; do
     _magenta ${ftype} : ${statarray[${ftype}]}
