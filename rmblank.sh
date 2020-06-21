@@ -14,4 +14,5 @@ for file in $@ ; do
     fi
 done
 
-sed '/^$/d' -i $@
+sed -i.bak '/^$/d' $@
+rm *.bak
