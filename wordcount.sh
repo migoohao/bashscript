@@ -7,7 +7,7 @@ if [[ $# -ne 1 ]]; then
     exit 1
 fi
 
-egrep -o '\b[[:alpha:]]+\b' $1 | awk '{
+egrep -o '\b[[:alpha:]]+\b' $1 | tr A-Z a-z |awk '{
     count[$0]++
 }
 END {
